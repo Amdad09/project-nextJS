@@ -23,7 +23,7 @@ const AddEventForm = () => {
                body: JSON.stringify(payload),
            });
 
-           const data = await res.json(); // ✅ server থেকে JSON আসবে
+           const data = await res.json(); 
 
            if (data.success) {
                toast.success('Event added successfully!');
