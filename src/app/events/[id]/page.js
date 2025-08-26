@@ -3,7 +3,9 @@ import Image from "next/image";
 const EventDetailsPage = async ({ params }) => {
     const p = await params;
     console.log(p);
-    const res = await fetch(`http://localhost:3000/api/event/${p.id}`);
+    const res = await fetch(
+        `https://project-five-lime-13.vercel.app/api/event/${p.id}`,
+    );
     const eventInfo = await res.json();
     return (
         <div className="container">

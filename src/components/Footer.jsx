@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white mt-8">
+        <footer className="bg-gray-900 text-white ">
             <div className="container mx-auto px-6 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* About Section */}
@@ -22,28 +23,28 @@ const Footer = () => {
                         <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a
-                                    href="#events"
+                                <Link
+                                    href="/allEvents"
                                     className="text-gray-300 hover:text-blue-500 transition"
                                 >
                                     Events
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#register"
+                                <Link
+                                    href="/register"
                                     className="text-gray-300 hover:text-blue-500 transition"
                                 >
                                     Register
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#about"
+                                <Link
+                                    href="/about"
                                     className="text-gray-300 hover:text-blue-500 transition"
                                 >
                                     About Us
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a
@@ -63,7 +64,8 @@ const Footer = () => {
                         </h3>
                         <div className="flex space-x-4 mb-4">
                             <a
-                                href="https://facebook.com"
+                                href="https://www.facebook.com/Amdad09"
+                                target="_blank"
                                 className="text-gray-300 hover:text-blue-500 transition"
                             >
                                 <svg
@@ -75,7 +77,8 @@ const Footer = () => {
                                 </svg>
                             </a>
                             <a
-                                href="https://twitter.com"
+                                href="https://x.com/Amdad09_"
+                                target="_blank"
                                 className="text-gray-300 hover:text-blue-500 transition"
                             >
                                 <svg
@@ -87,7 +90,8 @@ const Footer = () => {
                                 </svg>
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/Amdad09"
+                                target="_blank"
                                 className="text-gray-300 hover:text-blue-500 transition"
                             >
                                 <svg
@@ -103,7 +107,7 @@ const Footer = () => {
                             Email: amdadulhaque601671@gmail.com
                         </p>
                         <p className="text-gray-300">
-                            Phone: +880 132 107 9431
+                            Phone: +88013-21079431
                         </p>
                     </div>
                 </div>

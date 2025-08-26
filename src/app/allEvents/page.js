@@ -1,14 +1,14 @@
 import dbConnect, { collectionName } from "@/lib/dbConnect";
 import EventCard from "../components/EventCard";
+export const dynamic = 'force-dynamic';
 
 const AllEvents = async () => {
-    // const res = await fetch('/events.json');
-    // const data = await dbConnect(collectionName.eventsCollection).find().toArray();
+    const data = await dbConnect(collectionName.eventsCollection).find().toArray();
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/allEvents`, {
-        cache: 'no-store',
-    });
-    const data = await res.json();
+    // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/events`, {
+    //     cache: 'no-store',
+    // });
+    // const data = await res.json();
 
     return (
         <div className="mt-12">

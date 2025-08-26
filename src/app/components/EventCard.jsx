@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const EventCard = ({ event }) => {
     return (
-        <div className="overflow-hidden rounded-md bg-[#242526] pb-4">
+        <div className="overflow-hidden rounded-md bg-gray-900 pb-4">
             <Image
                 src={event?.imageUrl}
                 alt={event?.name}

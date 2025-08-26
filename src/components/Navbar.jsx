@@ -59,7 +59,7 @@ const Navbar = () => {
                 </div>
                 <Link href="/" className="flex items-center gap-3">
                     <Image
-                        className="border-4 rounded-full border-violet-600"
+                        className="border-2 rounded-full border-indigo-600"
                         src="/logo.jpg"
                         alt="Eventry"
                         width={50}
