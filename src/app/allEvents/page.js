@@ -1,10 +1,9 @@
-import React from 'react';
-import EventCard from './EventCard';
-import dbConnect, { collectionName } from '@/lib/dbConnect';
+import dbConnect, { collectionName } from "@/lib/dbConnect";
+import EventCard from "../components/EventCard";
 
-const EventsSection = async () => {
+const AllEvents = async () => {
     // const res = await fetch('/events.json');
-    const data = await dbConnect(collectionName.eventsCollection).find().limit(6).toArray();
+    const data = await dbConnect(collectionName.eventsCollection).find().toArray();
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -17,4 +16,4 @@ const EventsSection = async () => {
     );
 };
 
-export default EventsSection;
+export default AllEvents;

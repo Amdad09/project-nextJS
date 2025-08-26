@@ -12,7 +12,10 @@ const Navbar = () => {
                 <Link href="/">Home</Link>
             </li>
             <li>
-                <Link href="/events">Events</Link>
+                <Link href="/allEvents">Events</Link>
+            </li>
+            <li>
+                <Link href="/event/add">Add Events</Link>
             </li>
             <li>
                 <Link href="/contact">Contact</Link>

@@ -1,12 +1,10 @@
-import dbConnect, { collectionName } from '@/lib/dbConnect';
-import {ObjectId} from 'mongodb'
-import Image from 'next/image';
+import Image from "next/image";
 
 const EventDetailsPage = async ({ params }) => {
-    const event = await params; 
-    const eventsCollection = dbConnect(collectionName.eventsCollection); 
-    const eventInfo = await eventsCollection.findOne({ _id: new ObjectId(event.id) });
-
+    const p = await params;
+    console.log(p);
+    const res = await fetch(`http://localhost:3000/api/event/${p.id}`);
+    const eventInfo = await res.json();
     return (
         <div className="container">
             <div>
