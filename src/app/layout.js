@@ -4,6 +4,8 @@ import NextAuthProvider from '@/providers/NextAuthProvider';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import './globals.css';
+import { Suspense } from 'react';
+import Loading from '@/components/Loading';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -29,7 +31,9 @@ export default function RootLayout({ children }) {
                 <NextAuthProvider>
                     <Navbar />
                     <Toaster />
-                    <div className="">{children}</div>
+                    <Suspense fallback={<Loading/>}>
+                        <div className="">{children}</div>
+                    </Suspense>
                     <Footer />
                 </NextAuthProvider>
             </body>

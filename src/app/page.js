@@ -5,10 +5,10 @@ import AboutUsPage from "./about/page";
 
 export default function Home() {
   return (
-    <section>
-      <BannerSection/>
-      <EventsSection />
-      <AboutUsPage/>
-    </section>
+      <section>
+          <BannerSection />
+          <EventsSection />
+          <AboutUsPage />
+      </section>
   );
 }

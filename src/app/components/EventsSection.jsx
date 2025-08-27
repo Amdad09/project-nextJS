@@ -4,11 +4,17 @@ import dbConnect, { collectionName } from '@/lib/dbConnect';
 
 const EventsSection = async () => {
     // const res = await fetch('/events.json');
-    const data = await dbConnect(collectionName.eventsCollection).find().limit(6).toArray();
+    const events = await dbConnect(collectionName.eventsCollection)
+        .find()
+        .sort({ createdAt: -1 })
+        .limit(6)
+        .toArray();
+
+    const data = JSON.parse(JSON.stringify(events));
 
     return (
-        <div>
-            <div className="text-center my-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-12">
+            <div className="text-center mb-12 ">
                 <h2 className="text-3xl md:text-4xl font-bold">
                     🎉 Upcoming Tech Events
                 </h2>
@@ -21,7 +27,7 @@ const EventsSection = async () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {data.map((event) => {
                     return (
-                        <EventCard key={event.name} event={event}></EventCard>
+                        <EventCard key={event._id} event={event}></EventCard>
                     );
                 })}
             </div>

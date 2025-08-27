@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { XCircle, Home, RefreshCw } from 'lucide-react';
+import { AlertTriangle, Home } from 'lucide-react';
 import Link from 'next/link';
 
 // Animation variants for the content
@@ -42,7 +42,7 @@ const pulseVariants = {
     },
 };
 
-const Error = ({ error, reset }) => {
+const NotFound = () => {
     const controls = useAnimation();
 
     // Start animations on mount
@@ -68,15 +68,15 @@ const Error = ({ error, reset }) => {
 
                 {/* Error icon */}
                 <motion.div variants={childVariants}>
-                    <XCircle className="mx-auto h-16 w-16 text-error" />
+                    <AlertTriangle className="mx-auto h-16 w-16 text-error" />
                 </motion.div>
 
-                {/* Error header */}
+                {/* 404 header */}
                 <motion.h1
-                    className="text-4xl font-bold text-error mt-4"
+                    className="text-5xl font-bold text-error mt-4"
                     variants={childVariants}
                 >
-                    Something Went Wrong!
+                    404
                 </motion.h1>
 
                 {/* Error message */}
@@ -84,36 +84,14 @@ const Error = ({ error, reset }) => {
                     className="text-lg text-base-content/70 mt-4"
                     variants={childVariants}
                 >
-                    Sorry, an error occurred. Please try again or return to the
-                    homepage.
+                    Oops! The page you are looking for can not be found.
                 </motion.p>
 
-                {/* Error details */}
-                <motion.p
-                    className="text-lg text-error mt-2 underline"
-                    variants={childVariants}
-                >
-                    Error: {error?.message || 'Unknown error'}
-                </motion.p>
-
-                {/* Button group */}
-                <motion.div
-                    className="mt-6 flex gap-4 justify-center"
-                    variants={childVariants}
-                >
-                    <button
-                        className="btn btn-error flex items-center gap-2"
-                        onClick={() => reset()}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <RefreshCw size={20} />
-                        Try Again
-                    </button>
+                {/* Back to home button */}
+                <motion.div className="mt-6" variants={childVariants}>
                     <Link href="/">
                         <motion.button
-                            className="btn button flex items-center gap-2"
+                            className="btn button flex items-center gap-2 mx-auto"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ duration: 0.2 }}
@@ -128,4 +106,4 @@ const Error = ({ error, reset }) => {
     );
 };
 
-export default Error;
+export default NotFound;

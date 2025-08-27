@@ -156,7 +156,7 @@ const AboutUsPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
                         {
-                            name: 'John Doe',
+                            name: 'Anika Lahre',
                             role: 'Event Director',
                             img: 'https://res.cloudinary.com/dayymkvtl/image/upload/v1756231005/pexels-olly-774909_valne2.jpg',
                             bio: 'With over 10 years of experience in event management, John leads our team to deliver world-class tech events.',
@@ -204,12 +204,13 @@ const AboutUsPage = () => {
                                     {member.bio}
                                 </p>
                                 <div className="mt-4">
-                                    <Link
-                                        href="#"
-                                        className="text-blue-400 hover:underline"
+                                    <a
+                                        href=" https://www.facebook.com/Amdad09"
+                                        target="_blank"
+                                        className="text-teal-500 hover:underline"
                                     >
                                         Connect
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>
@@ -290,7 +291,7 @@ const AboutUsPage = () => {
                     transition={{ delay: 0.4 }}
                 >
                     <Link
-                        href="/events"
+                        href="/allEvents"
                         className="btn bg-blue-600 hover:bg-blue-700 text-white text-lg px-6 py-3 rounded-lg"
                     >
                         Explore Events

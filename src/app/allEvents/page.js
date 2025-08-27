@@ -3,15 +3,16 @@ import EventCard from "../components/EventCard";
 export const dynamic = 'force-dynamic';
 
 const AllEvents = async () => {
-    const data = await dbConnect(collectionName.eventsCollection).find().toArray();
+    const events = await dbConnect(collectionName.eventsCollection)
+        .find()
+        .sort({ createdAt: -1 })
+        .toArray();
+    const data = JSON.parse(JSON.stringify(events));
 
-    // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/events`, {
-    //     cache: 'no-store',
-    // });
-    // const data = await res.json();
+    // throw new Error('Test Error');
 
     return (
-        <div className="mt-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-12">
             <div className="text-center mb-8">
                 <h1 className="text-3xl md:text-4xl font-bold">
                     🎉 All Tech Events
@@ -25,7 +26,7 @@ const AllEvents = async () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {data.map((event) => {
                     return (
-                        <EventCard key={event.name} event={event}></EventCard>
+                        <EventCard key={event._id} event={event}></EventCard>
                     );
                 })}
             </div>

@@ -13,8 +13,7 @@ const HeroSection = () => {
                     backgroundImage: `url('https://res.cloudinary.com/dayymkvtl/image/upload/v1756215642/pablo-heimplatz-ZODcBkEohk8-unsplash_dyeawg.jpg')`,
                 }}
             />
-            {/* Gradient Overlay with high opacity for text visibility */}
-            {/* This is the key change: this div adds a dark layer on top of the image. */}
+
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/75 z-0"></div>
 
             {/* Content Container */}

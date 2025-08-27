@@ -25,6 +25,7 @@ export const POST = async (req) => {
             interested_ids: [],
             going_ids: [],
             swags: [],
+            createdAt: new Date()
         });
 
         // always return valid JSON

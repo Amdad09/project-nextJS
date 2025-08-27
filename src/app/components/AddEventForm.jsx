@@ -28,7 +28,7 @@ const AddEventForm = () => {
            if (data.success) {
                toast.success('Event added successfully!');
                e.target.reset();
-               router.push('/');
+               router.push('/allEvents');
            } else {
                toast.error(data.message || 'Failed to add event');
            }
@@ -37,7 +37,6 @@ const AddEventForm = () => {
            toast.error('Server error');
        }
    };
-
 
     return (
         <form

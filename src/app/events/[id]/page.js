@@ -8,7 +8,7 @@ const EventDetailsPage = async ({ params }) => {
     );
     const eventInfo = await res.json();
     return (
-        <div className="container">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-12 ">
             <div>
                 <div className="bg-gradient-to-b from-slate-200/20 to-slate-800/30">
                     <Image
